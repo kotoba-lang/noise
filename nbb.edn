@@ -1,5 +1,11 @@
-;; nbb classpath for the first-class (ClojureScript) runtime. `kotoba.bytes` is
-;; consumed from the sibling west checkout rather than as a git dep, because nbb
-;; resolves :local/root but not :git/sha.
-{:paths ["src" "test"]
- :deps {io.github.kotoba-lang/bytes {:local/root "../bytes"}}}
+;; Source paths only — deliberately NO :deps.
+;;
+;; An `nbb.edn` with `:deps` makes nbb resolve them by shelling out to **bb**
+;; (babashka), which this workspace retired as a script host (ADR-2607173000) and
+;; which is simply absent on a CI runner: the first CI run of this repo failed with
+;; `/bin/sh: 1: bb: not found` even though every local run was green, because the
+;; local machine happened to have bb installed. Sibling libraries are supplied on
+;; the command line instead:
+;;
+;;   nbb --classpath "src:test:../bytes/src" run-tests.cljs
+{:paths ["src" "test"]}
