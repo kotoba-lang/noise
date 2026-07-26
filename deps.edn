@@ -1,0 +1,16 @@
+{:paths ["src"]
+ :version "0.1.0"
+ ;; kotoba.bytes supplies the portable byte-vector primitives (hex, base64,
+ ;; constant-time-eq, SHA-256 for the SHA256 suite). Nothing else — the two
+ ;; primitives that must be constant-time are injected by the caller's provider,
+ ;; not depended on here (see noise.suite).
+ :deps {io.github.kotoba-lang/bytes {:git/sha "5f977dd3e8ca73185488302841ade390e1979540"}}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {io.github.cognitect-labs/test-runner {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}
+
+  :lint {:replace-deps {clj-kondo/clj-kondo {:mvn/version "2024.11.14"}}
+         :main-opts ["-m" "clj-kondo.main" "--lint" "src" "test"
+                     "--fail-level" "error"]}}}

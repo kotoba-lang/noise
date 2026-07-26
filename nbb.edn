@@ -1,0 +1,5 @@
+;; nbb classpath for the first-class (ClojureScript) runtime. `kotoba.bytes` is
+;; consumed from the sibling west checkout rather than as a git dep, because nbb
+;; resolves :local/root but not :git/sha.
+{:paths ["src" "test"]
+ :deps {io.github.kotoba-lang/bytes {:local/root "../bytes"}}}
