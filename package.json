@@ -11,6 +11,6 @@
     "nbb": "^1.4.208"
   },
   "scripts": {
-    "test": "nbb --classpath src:test run-tests.cljs"
+    "test": "nbb --classpath \"src:test:../bytes/src\" run-tests.cljs"
   }
 }
