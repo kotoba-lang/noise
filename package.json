@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "nbb --classpath \"src:test:../bytes/src\" run-tests.cljs",
-    "test:reference": "nbb --classpath \"src:test:../bytes/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-aead-test"
+    "test:reference": "nbb --classpath \"src:test:../bytes/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-aead-test",
+    "test:reference-hashes": "nbb --classpath \"src:test:../bytes/src:../org-nist-sha2/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-hash-test"
   }
 }

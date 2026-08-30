@@ -63,6 +63,11 @@
   remove `@noble/ciphers` from package.json until reference is measured
   on-path (`npm run test:reference`).
 
+  ## `@noble/hashes` substitution
+
+  SHA-256 via `noise.provider.reference` + `sha2.core`
+  (`npm run test:reference-hashes`). BLAKE2s stays noble on handshake hot paths.
+
   `opts`: `:hash :blake2s` (default) | `:sha256` — must match the suite's hash."
   ([] (ports {}))
   ([{:keys [hash] :or {hash :blake2s}}]
