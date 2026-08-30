@@ -11,7 +11,7 @@
             [noise.provider.noble :as noble]))
 
 (defn aead-encrypt [k nonce ad plaintext]
-  (:bytes (aead/seal! k nonce ad plaintext)))
+  (aead/seal! k nonce ad plaintext))
 
 (defn aead-decrypt [k nonce ad ciphertext]
   (let [r (aead/open k nonce ad ciphertext)]

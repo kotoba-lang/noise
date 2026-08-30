@@ -11,6 +11,7 @@
     "nbb": "^1.4.208"
   },
   "scripts": {
-    "test": "nbb --classpath \"src:test:../bytes/src\" run-tests.cljs"
+    "test": "nbb --classpath \"src:test:../bytes/src\" run-tests.cljs",
+    "test:reference": "nbb --classpath \"src:test:../bytes/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-aead-test"
   }
 }
