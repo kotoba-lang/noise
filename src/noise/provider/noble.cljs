@@ -49,13 +49,21 @@
    Overriding the hash matters for more than tidiness. `noise.blake2s` is correct
    (it is what the RFC and OpenSSL cross-checks run against) but it is Clojure
    arithmetic, and under nbb that arithmetic is *interpreted* by SCI: measured on
-   this workstation, one 96-byte BLAKE2s took ~16 ms, which made a single IK
-   handshake take ~1.5 s and starved the agent's socket loop badly enough that
-   relay handshakes visibly raced. With `@noble/hashes` the same handshake is
-   milliseconds. So: the pure implementation stays the portable default and the
-   reference for tests, and any runtime that has a real hash injects it here.
+  this workstation, one 96-byte BLAKE2s took ~16 ms, which made a single IK
+  handshake take ~1.5 s and starved the agent's socket loop badly enough that
+  relay handshakes visibly raced. With `@noble/hashes` the same handshake is
+  milliseconds. So: the pure implementation stays the portable default and the
+  reference for tests, and any runtime that has a real hash injects it here.
 
-   `opts`: `:hash :blake2s` (default) | `:sha256` — must match the suite's hash."
+  ## `@noble/ciphers` substitution
+
+  AEAD here uses `@noble/ciphers/chacha.js`. For host-provider / correctness
+  paths use `noise.provider.reference` (`chacha20.aead` from
+  `org-ietf-chacha20-poly1305`). Keep noble on handshake hot paths; do not
+  remove `@noble/ciphers` from package.json until reference is measured
+  on-path (`npm run test:reference`).
+
+  `opts`: `:hash :blake2s` (default) | `:sha256` — must match the suite's hash."
   ([] (ports {}))
   ([{:keys [hash] :or {hash :blake2s}}]
    {:dh-generate dh-generate
