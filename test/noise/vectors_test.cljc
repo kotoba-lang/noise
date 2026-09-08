@@ -13,7 +13,7 @@
   `25519_ChaChaPoly_BLAKE2s` and `25519_ChaChaPoly_SHA256` — 6 vectors,
   6 handshake messages each including the post-handshake transport messages."
   (:require [clojure.edn :as edn]
-            [clojure.string :as str]
+            [kotoba.lang.text :as str]
             [clojure.test :refer [deftest is testing]]
             [kotoba.bytes :as b]
             [noise.cipher-state :as cs]
@@ -33,7 +33,7 @@
 (defn- parse-name [protocol-name]
   (let [[_ pattern hash] (re-matches #"Noise_(\w+)_25519_ChaChaPoly_(\w+)" protocol-name)]
     {:pattern (keyword pattern)
-     :hash (keyword (str/lower-case hash))}))
+     :hash (keyword (str/lower hash))}))
 
 (defn- run-vector [{:keys [protocol-name init-prologue init-static init-ephemeral
                           init-remote-static resp-static resp-ephemeral
