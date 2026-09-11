@@ -115,9 +115,9 @@ an ADR first rather than quietly claiming compatibility.
 Both runtimes run the same `.cljc` namespaces:
 
 ```bash
-npm install && nbb --classpath "src:test:../bytes/src" run-tests.cljk   # first-class
-clojure -M:test                                                        # JVM/JCA compat
-clojure -M:lint
+npm install && kbb --backend sci --classpath "src:test:../bytes/src" run-tests.cljk   # first-class
+kbb -M:test                                                        # JVM/JCA compat
+kbb -M:lint
 ```
 
 Measured 2026-07-26: **25 tests / 152 assertions / 0 failures on both** (nbb
