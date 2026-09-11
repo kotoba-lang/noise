@@ -18,7 +18,7 @@
 
   Verified against the RFC 7693 appendix A vector and the official
   `blake2s-kat.txt` known-answer vectors (unkeyed + keyed, input lengths
-  0..255) — see `test/noise/blake2s_test.cljc`."
+  0..255) — see `test/noise/blake2s_test.cljk`."
   (:refer-clojure :exclude [hash]))
 
 ;; ---------------------------------------------------------------------------

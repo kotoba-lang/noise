@@ -23,7 +23,7 @@ jobs:
       - name: Fetch kotoba.bytes (sibling checkout, as nbb.edn's :local/root expects)
         run: git clone --depth 1 https://github.com/kotoba-lang/bytes ../bytes
       - run: npm install --no-audit --no-fund
-      - run: npx nbb --classpath "src:test:../bytes/src" run-tests.cljs
+      - run: npx nbb --classpath "src:test:../bytes/src" run-tests.cljk
 
   jvm:
     name: clojure -M:test (JDK ${{ matrix.java }})
