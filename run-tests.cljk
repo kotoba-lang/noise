@@ -1,6 +1,6 @@
 #!/usr/bin/env nbb
 ;; nbb test runner — the first-class runtime path (ClojureScript + @noble/*).
-;;   npm install && nbb --classpath src:test run-tests.cljs
+;;   npm install && nbb --classpath src:test run-tests.cljk
 ;; The JVM/JCA path is `clojure -M:test`; both run the same .cljc namespaces, so
 ;; a divergence between the two providers shows up as a failure, not a surprise
 ;; in production.

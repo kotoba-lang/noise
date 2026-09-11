@@ -7,5 +7,5 @@
 ;; local machine happened to have bb installed. Sibling libraries are supplied on
 ;; the command line instead:
 ;;
-;;   nbb --classpath "src:test:../bytes/src" run-tests.cljs
+;;   nbb --classpath "src:test:../bytes/src" run-tests.cljk
 {:paths ["src" "test"]}
