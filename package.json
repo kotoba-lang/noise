@@ -11,8 +11,8 @@
     "nbb": "^1.4.208"
   },
   "scripts": {
-    "test": "nbb --classpath \"src:test:../bytes/src\" run-tests.cljk",
-    "test:reference": "nbb --classpath \"src:test:../bytes/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-aead-test",
-    "test:reference-hashes": "nbb --classpath \"src:test:../bytes/src:../org-nist-sha2/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-hash-test"
+    "test": "kbb --backend sci --classpath \"src:test:../bytes/src\" run-tests.cljk",
+    "test:reference": "kbb --backend sci --classpath \"src:test:../bytes/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-aead-test",
+    "test:reference-hashes": "kbb --backend sci --classpath \"src:test:../bytes/src:../org-nist-sha2/src:../org-ietf-chacha20-poly1305/src\" -m noise.provider.reference-hash-test"
   }
 }
