@@ -1,7 +1,7 @@
 (ns noise.handshake-test
   "What the known-answer vectors cannot show: that the handshake *rejects* the
   things it must reject. A KAT only proves the happy path is byte-exact."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.bytes :as b]
             [noise.core :as noise]
             #?(:clj [noise.provider.jvm :as provider]

@@ -15,7 +15,7 @@
   counter) or the final-block flag wrong for anything ≥ 64 bytes — and Noise's
   own inputs are short, so the bug would not surface until this library hashed
   something larger."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.bytes :as b]
             [noise.blake2s :as blake2s]
             [noise.kdf :as kdf]
