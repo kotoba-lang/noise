@@ -14,7 +14,7 @@
   6 handshake messages each including the post-handshake transport messages."
   (:require [clojure.edn :as edn]
             [kotoba.lang.text :as str]
-            [clojure.test :refer [deftest is testing]]
+            [kotoba.test :refer [deftest is testing]]
             [kotoba.bytes :as b]
             [noise.cipher-state :as cs]
             [noise.core :as noise]

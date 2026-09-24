@@ -1,7 +1,7 @@
 (ns noise.session-test
   "The transport phase over a lossy, reordering, replaying datagram network —
   i.e. the conditions Noise's own transport model explicitly does not cover."
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.bytes :as b]
             [noise.cipher-state :as cipher-state]
             [noise.core :as noise]
