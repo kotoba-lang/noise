@@ -12,7 +12,7 @@
   remote static) and NN (anonymous), each under both
   `25519_ChaChaPoly_BLAKE2s` and `25519_ChaChaPoly_SHA256` — 6 vectors,
   6 handshake messages each including the post-handshake transport messages."
-  (:require [clojure.edn :as edn]
+  (:require [kotoba.lang.edn :as edn]
             [kotoba.lang.text :as str]
             [kotoba.test :refer [deftest is testing]]
             [kotoba.bytes :as b]
