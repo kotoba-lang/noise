@@ -20,7 +20,7 @@
             [noise.core :as noise]
             [noise.patterns :as patterns]
             [noise.suite :as suite]
-            #?@(:clj [[clojure.java.io :as io]
+            #?@(:clj [[kotoba.io :as io]
                       [noise.provider.jvm :as provider]]
                 :cljs [["fs" :as fs]
                        [noise.provider.noble :as provider]])))
